@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>game on //erik</title>
+    <link>https://abouterik.github.io/tags/game/</link>
+    <description>Recent content in game on //erik</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Mar 2020 22:46:02 +0100</lastBuildDate><atom:link href="https://abouterik.github.io/tags/game/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blood Runs Cold</title>
+      <link>https://abouterik.github.io/projects/blood-runs-cold/</link>
+      <pubDate>Mon, 09 Mar 2020 22:46:02 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/projects/blood-runs-cold/</guid>
+      <description>“Blood Runs Cold is a gruesome take on the much-loved Hidden Object genre. The story follows journalist Paige Harper as she attempts to prove her innocence, having been framed for a series of horrifying crimes. Subjected to a trial by media in a world where news is more about shocking headlines than truth, players must assist Paige as she delves into the dark and twisted mind of a serial killer.</description>
+    </item>
+    
+  </channel>
+</rss>

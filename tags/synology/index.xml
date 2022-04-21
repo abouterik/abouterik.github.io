@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>synology on //erik</title>
+    <link>https://abouterik.github.io/tags/synology/</link>
+    <description>Recent content in synology on //erik</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 17 Jul 2020 20:08:03 +0200</lastBuildDate><atom:link href="https://abouterik.github.io/tags/synology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bash Aliases Synology</title>
+      <link>https://abouterik.github.io/posts/bash-aliases-synology/</link>
+      <pubDate>Fri, 17 Jul 2020 20:08:03 +0200</pubDate>
+      
+      <guid>https://abouterik.github.io/posts/bash-aliases-synology/</guid>
+      <description>Creating a bash alias on a Synology DiskStation    The Problem    On main usage of my SSH access to my Synology DiskStation is to start the headless JDownloader that&amp;rsquo;s stored inside a subfolder on my user profile there. This includes logging in, changing directory to the JD path and executing the jar file there. Because JD is often updated and the Java process itself can become quite garbaged over time I need to do this quite regularly.</description>
+    </item>
+    
+    <item>
+      <title>Document Management on a Synology NAS</title>
+      <link>https://abouterik.github.io/posts/mayan-edms-synology/</link>
+      <pubDate>Thu, 12 Mar 2020 13:37:45 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/posts/mayan-edms-synology/</guid>
+      <description>Introduction    Have you ever looked on your desk and thought &amp;lsquo;Oh, well&amp;hellip; I should have a better way to organize those paperworks&amp;rsquo;? I&amp;rsquo;ve been reading some articles over digitalizing all my paperworks throughout the past years, but always hesitated because I had no idea of a good architecture for home and laziness of course.
+I wanted to have an accessible solution centralized at home to store my documents and being able to search all the stuff that I may need someday.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ios on //erik</title>
+    <link>https://abouterik.github.io/tags/ios/</link>
+    <description>Recent content in ios on //erik</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Mar 2020 21:23:41 +0100</lastBuildDate><atom:link href="https://abouterik.github.io/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Profiling an iOS app</title>
+      <link>https://abouterik.github.io/posts/profiling-ios/</link>
+      <pubDate>Mon, 09 Mar 2020 21:23:41 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/posts/profiling-ios/</guid>
+      <description>Profiling    While developing we often don&amp;rsquo;t care about the hard restrictions that we can&amp;rsquo;t overcome: hardware limitations, especially on mobile devices, always limit what we can do and what we should do.
+This is not just true in regards to limitations of how many calculations we can achieve in a specified time, but also in respect to the user and his expectations. Imagine an app that drains your battery like it was a CapriSonne on a hot day.</description>
+    </item>
+    
+  </channel>
+</rss>

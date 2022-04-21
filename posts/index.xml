@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on //erik</title>
+    <link>https://abouterik.github.io/posts/</link>
+    <description>Recent content in Posts on //erik</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 16 Feb 2021 10:42:36 +0100</lastBuildDate><atom:link href="https://abouterik.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linting Dart</title>
+      <link>https://abouterik.github.io/posts/dart-linting/</link>
+      <pubDate>Tue, 16 Feb 2021 10:42:36 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/posts/dart-linting/</guid>
+      <description>Linting &amp;amp; Code Style    Linting in dart    The Dart SDK comes with a built-in linter in the analyzer package. To use it we need to create a configuration file that
+holds the rules we want to use in our project.
+Create the configuration file    In your root directy where your pubspec.yaml lives create a file named analysis_options.yaml. In here you can make use</description>
+    </item>
+    
+    <item>
+      <title>Flutter State Management 2021</title>
+      <link>https://abouterik.github.io/posts/flutter-state-management/</link>
+      <pubDate>Fri, 05 Feb 2021 11:34:49 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/posts/flutter-state-management/</guid>
+      <description>State Management in Flutter    We have evaluated different state management plugins for Flutter. Two of the most commonly used plugins are Riverpod and BLoC/Cubit.
+ Riverpod Cubit/BLoC GetX  Riverpod    Riverpod is the successor of flutter providers and builds up on that base while also reducing some issues.
+Concept:     build a global provider (e.g. static variable, object or changing stream final keyProvider = Provider((ref) =&amp;gt; &amp;#39;myKey&amp;#39;);  wrap up your App() with a ProviderScope() void main() {  runApp(ProviderScope(child: MyApp())); }  use ConsumerWidget instead of StatelessWidget or a Consumer inside the build method of another widget to read the values from your provider watch your provider for values or state // *** // ConsumerWidget // ***  class Example extends ConsumerWidget {  @override  Widget build(BuildContext context, ScopedReader watch) {  // Listens to the value exposed by counterProvider  int count = watch(counterProvider).</description>
+    </item>
+    
+    <item>
+      <title>Bash Aliases Synology</title>
+      <link>https://abouterik.github.io/posts/bash-aliases-synology/</link>
+      <pubDate>Fri, 17 Jul 2020 20:08:03 +0200</pubDate>
+      
+      <guid>https://abouterik.github.io/posts/bash-aliases-synology/</guid>
+      <description>Creating a bash alias on a Synology DiskStation    The Problem    On main usage of my SSH access to my Synology DiskStation is to start the headless JDownloader that&amp;rsquo;s stored inside a subfolder on my user profile there. This includes logging in, changing directory to the JD path and executing the jar file there. Because JD is often updated and the Java process itself can become quite garbaged over time I need to do this quite regularly.</description>
+    </item>
+    
+    <item>
+      <title>Document Management on a Synology NAS</title>
+      <link>https://abouterik.github.io/posts/mayan-edms-synology/</link>
+      <pubDate>Thu, 12 Mar 2020 13:37:45 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/posts/mayan-edms-synology/</guid>
+      <description>Introduction    Have you ever looked on your desk and thought &amp;lsquo;Oh, well&amp;hellip; I should have a better way to organize those paperworks&amp;rsquo;? I&amp;rsquo;ve been reading some articles over digitalizing all my paperworks throughout the past years, but always hesitated because I had no idea of a good architecture for home and laziness of course.
+I wanted to have an accessible solution centralized at home to store my documents and being able to search all the stuff that I may need someday.</description>
+    </item>
+    
+    <item>
+      <title>Using the React Profiler</title>
+      <link>https://abouterik.github.io/posts/react-profiler/</link>
+      <pubDate>Tue, 10 Mar 2020 10:21:40 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/posts/react-profiler/</guid>
+      <description>Profiling a single component or dom tree    continueing from Profiling on iOS
+With react native 0.57 and up Facebook integrated a Profiler component we can use to test a single component or component tree. Simply wrap the desired component with a &amp;lt;Provider id={ID} onRender={CALLBACK}&amp;gt;&amp;lt;/Provider&amp;gt; and add a callback function to your code.
+The callback function receives these props:
+ id, // the &amp;ldquo;id&amp;rdquo; prop of the Profiler tree that has just committed phase, // either &amp;ldquo;mount&amp;rdquo; (if the tree just mounted) or &amp;ldquo;update&amp;rdquo; (if it re-rendered) actualDuration, // time spent rendering the committed update baseDuration, // estimated time to render the entire subtree without memoization startTime, // when React began rendering this update commitTime, // when React committed this update interactions // the Set of interactions belonging to this update  You can process the data any way you like, e.</description>
+    </item>
+    
+    <item>
+      <title>Profiling an iOS app</title>
+      <link>https://abouterik.github.io/posts/profiling-ios/</link>
+      <pubDate>Mon, 09 Mar 2020 21:23:41 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/posts/profiling-ios/</guid>
+      <description>Profiling    While developing we often don&amp;rsquo;t care about the hard restrictions that we can&amp;rsquo;t overcome: hardware limitations, especially on mobile devices, always limit what we can do and what we should do.
+This is not just true in regards to limitations of how many calculations we can achieve in a specified time, but also in respect to the user and his expectations. Imagine an app that drains your battery like it was a CapriSonne on a hot day.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>state management on //erik</title>
+    <link>https://abouterik.github.io/tags/state-management/</link>
+    <description>Recent content in state management on //erik</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 05 Feb 2021 11:34:49 +0100</lastBuildDate><atom:link href="https://abouterik.github.io/tags/state-management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flutter State Management 2021</title>
+      <link>https://abouterik.github.io/posts/flutter-state-management/</link>
+      <pubDate>Fri, 05 Feb 2021 11:34:49 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/posts/flutter-state-management/</guid>
+      <description>State Management in Flutter    We have evaluated different state management plugins for Flutter. Two of the most commonly used plugins are Riverpod and BLoC/Cubit.
+ Riverpod Cubit/BLoC GetX  Riverpod    Riverpod is the successor of flutter providers and builds up on that base while also reducing some issues.
+Concept:     build a global provider (e.g. static variable, object or changing stream final keyProvider = Provider((ref) =&amp;gt; &amp;#39;myKey&amp;#39;);  wrap up your App() with a ProviderScope() void main() {  runApp(ProviderScope(child: MyApp())); }  use ConsumerWidget instead of StatelessWidget or a Consumer inside the build method of another widget to read the values from your provider watch your provider for values or state // *** // ConsumerWidget // ***  class Example extends ConsumerWidget {  @override  Widget build(BuildContext context, ScopedReader watch) {  // Listens to the value exposed by counterProvider  int count = watch(counterProvider).</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+
+    
+
+    <meta name="author" content="Erik Slowikowski">
+    <meta name="description" content="How to do static code analysis on Dart files">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linting Dart"/>
+<meta name="twitter:description" content="How to do static code analysis on Dart files"/>
+
+    <meta property="og:title" content="Linting Dart" />
+<meta property="og:description" content="How to do static code analysis on Dart files" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://abouterik.github.io/posts/dart-linting/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-02-16T10:42:36+01:00" />
+<meta property="article:modified_time" content="2021-02-16T10:42:36+01:00" />
+
+
+
+    <title>
+  Linting Dart · //erik
+</title>
+
+    
+      <link rel="canonical" href="https://abouterik.github.io/posts/dart-linting/">
+    
+
+    <link rel="preload" href="https://abouterik.github.io/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="https://abouterik.github.io/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css" integrity="sha256-2f3b/&#43;byfmmYXcX&#43;BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://abouterik.github.io/css/coder-dark.min.002ee2378e14c7a68f1f0a53d9694ed252090987c4e768023fac694a4fc5f793.css" integrity="sha256-AC7iN44Ux6aPHwpT2WlO0lIJCYfE52gCP6xpSk/F95M=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://abouterik.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://abouterik.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://abouterik.github.io/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://abouterik.github.io/images/apple-touch-icon.png">
+
+    <meta name="generator" content="Hugo 0.97.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="preload-transitions colorscheme-auto">
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://abouterik.github.io/">
+      //erik
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://abouterik.github.io/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://abouterik.github.io/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://abouterik.github.io/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://ulthar.de">Priv. Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://abouterik.github.io/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://abouterik.github.io/posts/dart-linting/">
+              Linting Dart
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2021-02-16T10:42:36&#43;01:00">
+                16. February, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              2-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="https://abouterik.github.io/tags/flutter/">flutter</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="https://abouterik.github.io/tags/development/">development</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="https://abouterik.github.io/tags/app/">app</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="https://abouterik.github.io/tags/lint/">lint</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="https://abouterik.github.io/tags/dart/">dart</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h2 id="linting--code-style">
+  Linting &amp; Code Style
+  <a class="heading-link" href="#linting--code-style">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<h3 id="linting-in-dart">
+  Linting in dart
+  <a class="heading-link" href="#linting-in-dart">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>The Dart SDK comes with a built-in linter in the analyzer package. To use it we need to create a configuration file that</p>
+<p>holds the rules we want to use in our project.</p>
+<h4 id="create-the-configuration-file">
+  Create the configuration file
+  <a class="heading-link" href="#create-the-configuration-file">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p>In your root directy where your pubspec.yaml lives create a file named <code>analysis_options.yaml</code>. In here you can make use</p>
+<p>of every rule that can be found in the <a href="https://dart-lang.github.io/linter/lints/">supported lint rules collection</a>.</p>
+<p>Here&rsquo;s an example for the configuration</p>
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// Include the &#39;pedantic&#39; package, that is maintained by Google and provides just a small set of rules
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>include: package:pedantic/analysis_options.1.8.0.yaml
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>analyzer:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  exclude: [build/**]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  strong-mode:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    implicit-casts: false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>linter:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  rules:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - camel_case_types
+</span></span></code></pre></div><h4 id="effective-dart">
+  Effective Dart
+  <a class="heading-link" href="#effective-dart">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p><a href="https://dart.dev/guides/language/effective-dart">Effective Dart</a> is a comprehensible guide of learnings, rules and</p>
+<p>recommendations for coding with Dart. We recommend at least reading through the DOs &amp; DONTs &amp; other points mentioned</p>
+<p>there in a short way.</p>
+<p>Google itself just uses 27 of 150+ rules in their config. To enforce a stricter style we agreed on effective dart as our</p>
+<p>base rules set. To make it easier to follow this community-driven style &amp; coding guide we use the <code>lint</code> package</p>
+<p>found <a href="https://pub.dev/packages/lint">here</a>.</p>
+<p>Given our <code>analysis_options.yaml</code> file we just need to import the package</p>
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>include: package:lint/analysis_options.yaml
+</span></span></code></pre></div><p>and we&rsquo;re set. It&rsquo;s never been this easy to enforce a good &amp; strict code style. :)</p>
+<p>To overwrite any rules just set them in the <code>linter: rules: ...</code> section.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "slowtech" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    ©
+    
+      2020 -
+    
+    2022
+     Erik Slowikowski 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+      
+      <script src="https://abouterik.github.io/js/coder.min.8fb86376a16e684af472a329aef502dbebcfab65ce264e9750d144912947c602.js" integrity="sha256-j7hjdqFuaEr0cqMprvUC2&#43;vPq2XOJk6XUNFEkSlHxgI="></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>

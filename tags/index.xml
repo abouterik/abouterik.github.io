@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on //erik</title>
+    <link>https://abouterik.github.io/tags/</link>
+    <description>Recent content in Tags on //erik</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 16 Feb 2021 10:42:36 +0100</lastBuildDate><atom:link href="https://abouterik.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>app</title>
+      <link>https://abouterik.github.io/tags/app/</link>
+      <pubDate>Tue, 16 Feb 2021 10:42:36 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/app/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dart</title>
+      <link>https://abouterik.github.io/tags/dart/</link>
+      <pubDate>Tue, 16 Feb 2021 10:42:36 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/dart/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development</title>
+      <link>https://abouterik.github.io/tags/development/</link>
+      <pubDate>Tue, 16 Feb 2021 10:42:36 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flutter</title>
+      <link>https://abouterik.github.io/tags/flutter/</link>
+      <pubDate>Tue, 16 Feb 2021 10:42:36 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/flutter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lint</title>
+      <link>https://abouterik.github.io/tags/lint/</link>
+      <pubDate>Tue, 16 Feb 2021 10:42:36 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/lint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bloc</title>
+      <link>https://abouterik.github.io/tags/bloc/</link>
+      <pubDate>Fri, 05 Feb 2021 11:34:49 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/bloc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>getx</title>
+      <link>https://abouterik.github.io/tags/getx/</link>
+      <pubDate>Fri, 05 Feb 2021 11:34:49 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/getx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>state management</title>
+      <link>https://abouterik.github.io/tags/state-management/</link>
+      <pubDate>Fri, 05 Feb 2021 11:34:49 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/state-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>alias</title>
+      <link>https://abouterik.github.io/tags/alias/</link>
+      <pubDate>Fri, 17 Jul 2020 20:08:03 +0200</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/alias/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>https://abouterik.github.io/tags/bash/</link>
+      <pubDate>Fri, 17 Jul 2020 20:08:03 +0200</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>synology</title>
+      <link>https://abouterik.github.io/tags/synology/</link>
+      <pubDate>Fri, 17 Jul 2020 20:08:03 +0200</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/synology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://abouterik.github.io/tags/docker/</link>
+      <pubDate>Thu, 12 Mar 2020 13:37:45 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>documents</title>
+      <link>https://abouterik.github.io/tags/documents/</link>
+      <pubDate>Thu, 12 Mar 2020 13:37:45 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/documents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mayan</title>
+      <link>https://abouterik.github.io/tags/mayan/</link>
+      <pubDate>Thu, 12 Mar 2020 13:37:45 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/mayan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>paperless</title>
+      <link>https://abouterik.github.io/tags/paperless/</link>
+      <pubDate>Thu, 12 Mar 2020 13:37:45 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/paperless/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>profiling</title>
+      <link>https://abouterik.github.io/tags/profiling/</link>
+      <pubDate>Tue, 10 Mar 2020 10:21:40 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/profiling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react</title>
+      <link>https://abouterik.github.io/tags/react/</link>
+      <pubDate>Tue, 10 Mar 2020 10:21:40 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react-native</title>
+      <link>https://abouterik.github.io/tags/react-native/</link>
+      <pubDate>Tue, 10 Mar 2020 10:21:40 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/react-native/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>food</title>
+      <link>https://abouterik.github.io/tags/food/</link>
+      <pubDate>Mon, 09 Mar 2020 22:51:48 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/food/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>game</title>
+      <link>https://abouterik.github.io/tags/game/</link>
+      <pubDate>Mon, 09 Mar 2020 22:46:02 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/game/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>medical</title>
+      <link>https://abouterik.github.io/tags/medical/</link>
+      <pubDate>Mon, 09 Mar 2020 22:29:00 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/medical/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ios</title>
+      <link>https://abouterik.github.io/tags/ios/</link>
+      <pubDate>Mon, 09 Mar 2020 21:23:41 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/tags/ios/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

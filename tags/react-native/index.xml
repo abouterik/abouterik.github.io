@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>react-native on //erik</title>
+    <link>https://abouterik.github.io/tags/react-native/</link>
+    <description>Recent content in react-native on //erik</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Mar 2020 10:21:40 +0100</lastBuildDate><atom:link href="https://abouterik.github.io/tags/react-native/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using the React Profiler</title>
+      <link>https://abouterik.github.io/posts/react-profiler/</link>
+      <pubDate>Tue, 10 Mar 2020 10:21:40 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/posts/react-profiler/</guid>
+      <description>Profiling a single component or dom tree    continueing from Profiling on iOS
+With react native 0.57 and up Facebook integrated a Profiler component we can use to test a single component or component tree. Simply wrap the desired component with a &amp;lt;Provider id={ID} onRender={CALLBACK}&amp;gt;&amp;lt;/Provider&amp;gt; and add a callback function to your code.
+The callback function receives these props:
+ id, // the &amp;ldquo;id&amp;rdquo; prop of the Profiler tree that has just committed phase, // either &amp;ldquo;mount&amp;rdquo; (if the tree just mounted) or &amp;ldquo;update&amp;rdquo; (if it re-rendered) actualDuration, // time spent rendering the committed update baseDuration, // estimated time to render the entire subtree without memoization startTime, // when React began rendering this update commitTime, // when React committed this update interactions // the Set of interactions belonging to this update  You can process the data any way you like, e.</description>
+    </item>
+    
+  </channel>
+</rss>

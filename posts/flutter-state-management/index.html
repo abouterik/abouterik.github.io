@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+
+    
+
+    <meta name="author" content="Erik Slowikowski">
+    <meta name="description" content="A short doc about different packages for state management in Flutter">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Flutter State Management 2021"/>
+<meta name="twitter:description" content="A short doc about different packages for state management in Flutter"/>
+
+    <meta property="og:title" content="Flutter State Management 2021" />
+<meta property="og:description" content="A short doc about different packages for state management in Flutter" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://abouterik.github.io/posts/flutter-state-management/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-02-05T11:34:49+01:00" />
+<meta property="article:modified_time" content="2021-02-05T11:34:49+01:00" />
+
+
+
+    <title>
+  Flutter State Management 2021 · //erik
+</title>
+
+    
+      <link rel="canonical" href="https://abouterik.github.io/posts/flutter-state-management/">
+    
+
+    <link rel="preload" href="https://abouterik.github.io/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="https://abouterik.github.io/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css" integrity="sha256-2f3b/&#43;byfmmYXcX&#43;BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://abouterik.github.io/css/coder-dark.min.002ee2378e14c7a68f1f0a53d9694ed252090987c4e768023fac694a4fc5f793.css" integrity="sha256-AC7iN44Ux6aPHwpT2WlO0lIJCYfE52gCP6xpSk/F95M=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://abouterik.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://abouterik.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://abouterik.github.io/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://abouterik.github.io/images/apple-touch-icon.png">
+
+    <meta name="generator" content="Hugo 0.97.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="preload-transitions colorscheme-auto">
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://abouterik.github.io/">
+      //erik
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://abouterik.github.io/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://abouterik.github.io/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://abouterik.github.io/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://ulthar.de">Priv. Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://abouterik.github.io/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://abouterik.github.io/posts/flutter-state-management/">
+              Flutter State Management 2021
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2021-02-05T11:34:49&#43;01:00">
+                5. February, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              5-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="https://abouterik.github.io/tags/flutter/">flutter</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="https://abouterik.github.io/tags/development/">development</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="https://abouterik.github.io/tags/app/">app</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="https://abouterik.github.io/tags/state-management/">state management</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="https://abouterik.github.io/tags/bloc/">bloc</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="https://abouterik.github.io/tags/getx/">getx</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h2 id="state-management-in-flutter">
+  State Management in Flutter
+  <a class="heading-link" href="#state-management-in-flutter">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>We have evaluated different state management plugins for Flutter. Two of the most commonly used plugins are Riverpod and
+BLoC/Cubit.</p>
+<ol>
+<li><a href="#riverpod">Riverpod</a></li>
+<li><a href="#bloccubit">Cubit/BLoC</a></li>
+<li><a href="#getx">GetX</a></li>
+</ol>
+<h3 id="riverpod">
+  Riverpod
+  <a class="heading-link" href="#riverpod">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p><a href="https://riverpod.dev/docs/">Riverpod</a> is the successor of flutter providers and builds up on that base while also
+reducing some issues.</p>
+<h4 id="concept">
+  Concept:
+  <a class="heading-link" href="#concept">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<ul>
+<li>build a global provider (e.g. static variable, object or changing stream
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>final keyProvider = Provider((ref) =&gt; &#39;myKey&#39;);
+</span></span></code></pre></div></li>
+<li>wrap up your App() with a <code>ProviderScope()</code>
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>void main() {
+</span></span><span style="display:flex;"><span>  runApp(ProviderScope(child: MyApp()));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>use <code>ConsumerWidget</code> instead of <code>StatelessWidget</code> <em>or</em> a <code>Consumer</code> inside the build method of another widget to read
+the values from your provider</li>
+<li><code>watch</code> your provider for values or state
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>// ***
+</span></span><span style="display:flex;"><span>// ConsumerWidget
+</span></span><span style="display:flex;"><span>// ***
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>class Example extends ConsumerWidget {
+</span></span><span style="display:flex;"><span>  @override
+</span></span><span style="display:flex;"><span>  Widget build(BuildContext context, ScopedReader watch) {
+</span></span><span style="display:flex;"><span>    // Listens to the value exposed by counterProvider
+</span></span><span style="display:flex;"><span>    int count = watch(counterProvider).state;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    return Scaffold(
+</span></span><span style="display:flex;"><span>      appBar: AppBar(title: const Text(&#39;Counter example&#39;)),
+</span></span><span style="display:flex;"><span>      body: Center(
+</span></span><span style="display:flex;"><span>        child: Text(&#39;$count&#39;),
+</span></span><span style="display:flex;"><span>      ),
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// ***
+</span></span><span style="display:flex;"><span>// Consumer
+</span></span><span style="display:flex;"><span>// ***
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>class Example extends StatelessWidget {
+</span></span><span style="display:flex;"><span>  @override
+</span></span><span style="display:flex;"><span>  Widget build(BuildContext context) {
+</span></span><span style="display:flex;"><span>    return Scaffold(
+</span></span><span style="display:flex;"><span>      appBar: AppBar(title: const Text(&#39;Counter example&#39;)),
+</span></span><span style="display:flex;"><span>      body: Center(
+</span></span><span style="display:flex;"><span>        child: Consumer(
+</span></span><span style="display:flex;"><span>          // Rebuild only the Text when counterProvider updates
+</span></span><span style="display:flex;"><span>          builder: (context, watch, child) {
+</span></span><span style="display:flex;"><span>            // Listens to the value exposed by counterProvider
+</span></span><span style="display:flex;"><span>            int count = watch(counterProvider).state;
+</span></span><span style="display:flex;"><span>            return Text(&#39;$count&#39;);
+</span></span><span style="display:flex;"><span>          },
+</span></span><span style="display:flex;"><span>        ),
+</span></span><span style="display:flex;"><span>      ),
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="changeable-state-example">
+  Changeable State Example
+  <a class="heading-link" href="#changeable-state-example">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  // create a StateNotifier
+</span></span><span style="display:flex;"><span>  class CounterProvider extends StateNotifier&lt;int&gt; {
+</span></span><span style="display:flex;"><span>    Counter(): super(0);
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    void increment() =&gt; state++;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  // create a Provider for the StateNotifier
+</span></span><span style="display:flex;"><span>  final counterProvider = StateNotifierProvider((ref) =&gt; Counter());
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  // ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  @override
+</span></span><span style="display:flex;"><span>  Widget build(BuildContext context, ScopedReader watch) {
+</span></span><span style="display:flex;"><span>    // Obtains Counter without listening to Counter.state.
+</span></span><span style="display:flex;"><span>    // Will not cause the button to rebuild when the counter changes.
+</span></span><span style="display:flex;"><span>    final Counter counter = watch(counterProvider);
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    return RaisedButton(
+</span></span><span style="display:flex;"><span>      onPressed: counter.increment,
+</span></span><span style="display:flex;"><span>      child: Text(&#39;increment&#39;),
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><h4 id="sidenotes">
+  Sidenotes
+  <a class="heading-link" href="#sidenotes">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<ul>
+<li>You can also subscribe to Providers to start a custom action depending on the current state, e.g. open a dialog if
+user is empty</li>
+<li>You can combine providers and watch provider A from provider B</li>
+<li>There is an option to use riverpod together with <a href="https://pub.dev/packages/flutter_hooks">flutter_hooks</a> if desired</li>
+<li>even without hooks the concept reminds of React&rsquo;s context-based state management</li>
+<li>Providers may be modified, e.g. to auto-dispose when not needed anymore</li>
+</ul>
+<h3 id="bloccubit">
+  BLoC/Cubit
+  <a class="heading-link" href="#bloccubit">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>The <a href="https://pub.dev/packages/bloc">bloc plugin</a> helps to differ UI widgets from business logic. Cubits are the base
+class, while BLoCs are the extended version. Cubits were added later to the same package to provide a simpler
+alternative sufficient for most cases.</p>
+<p>A cubit is a type of stream that requires an initial state before emitting its first state result. Afterwards functions
+called on the cubit cause the state getting re-calculated and emitted again.</p>
+<h4 id="example">
+  Example
+  <a class="heading-link" href="#example">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<ul>
+<li>Create a cubit
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span>  /// A `CounterCubit` which manages an `<span style="color:#fff;font-weight:bold">int</span>` <span style="color:#fff;font-weight:bold">as</span> its state.
+</span></span><span style="display:flex;"><span>class CounterCubit extends Cubit&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; <span style="color:#f00">{</span>
+</span></span><span style="display:flex;"><span>  /// The initial state of the `CounterCubit` <span style="color:#fff;font-weight:bold">is</span> <span style="color:#ff0;font-weight:bold">0</span>.
+</span></span><span style="display:flex;"><span>  CounterCubit() : super(<span style="color:#ff0;font-weight:bold">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  /// <span style="color:#fff;font-weight:bold">When</span> increment <span style="color:#fff;font-weight:bold">is</span> called, the current state
+</span></span><span style="display:flex;"><span>  /// of the cubit <span style="color:#fff;font-weight:bold">is</span> accessed via `state` <span style="color:#fff;font-weight:bold">and</span>
+</span></span><span style="display:flex;"><span>  /// a new `state` <span style="color:#fff;font-weight:bold">is</span> emitted via `emit`.
+</span></span><span style="display:flex;"><span>  void increment() =&gt; emit(state + <span style="color:#ff0;font-weight:bold">1</span>);
+</span></span><span style="display:flex;"><span><span style="color:#f00">}</span>
+</span></span></code></pre></div></li>
+<li>Using a cubit
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span>void main() <span style="color:#f00">{</span>
+</span></span><span style="display:flex;"><span>  /// <span style="color:#fff;font-weight:bold">Create</span> a `CounterCubit` instance.
+</span></span><span style="display:flex;"><span>  final cubit = CounterCubit();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  /// Access the state of the `cubit` via `state`.
+</span></span><span style="display:flex;"><span>  print(cubit.state); // <span style="color:#ff0;font-weight:bold">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  /// Interact <span style="color:#fff;font-weight:bold">with</span> the `cubit` <span style="color:#fff;font-weight:bold">to</span> <span style="color:#fff;font-weight:bold">trigger</span> `state` changes.
+</span></span><span style="display:flex;"><span>  cubit.increment();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  /// Access the new `state`.
+</span></span><span style="display:flex;"><span>  print(cubit.state); // <span style="color:#ff0;font-weight:bold">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  /// Close the `cubit` <span style="color:#fff;font-weight:bold">when</span> it <span style="color:#fff;font-weight:bold">is</span> no longer needed.
+</span></span><span style="display:flex;"><span>  cubit.close();
+</span></span><span style="display:flex;"><span><span style="color:#f00">}</span>
+</span></span></code></pre></div></li>
+<li>Cubits may override the <code>onChange</code> and the <code>onError</code> method to react to any changes to the state
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>@override
+</span></span><span style="display:flex;"><span>void onChange(Change&lt;int&gt; change) {
+</span></span><span style="display:flex;"><span>  super.onChange(change);
+</span></span><span style="display:flex;"><span>  print(change);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="blocs">
+  BLoCs
+  <a class="heading-link" href="#blocs">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p>Instead of functions getting called BLoCs are listening to incoming events. It also adds more lifecycle methods for
+possible overwrites like <code>onEvent</code>, <code>onTransition</code> and so on. The <code>mapEventToState</code> function is responsible to alter the
+state corresponding to incoming events.</p>
+<ul>
+<li>Creating a bloc
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span>/// The events which `CounterBloc` will react <span style="color:#fff;font-weight:bold">to</span>.
+</span></span><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">enum</span> CounterEvent <span style="color:#f00">{</span> increment <span style="color:#f00">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>/// A `CounterBloc` which handles converting `CounterEvent`s <span style="color:#fff;font-weight:bold">into</span> `<span style="color:#fff;font-weight:bold">int</span>`s.
+</span></span><span style="display:flex;"><span>class CounterBloc extends Bloc&lt;CounterEvent, <span style="color:#fff;font-weight:bold">int</span>&gt; <span style="color:#f00">{</span>
+</span></span><span style="display:flex;"><span>  /// The initial state of the `CounterBloc` <span style="color:#fff;font-weight:bold">is</span> <span style="color:#ff0;font-weight:bold">0</span>.
+</span></span><span style="display:flex;"><span>  CounterBloc() : super(<span style="color:#ff0;font-weight:bold">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  @override
+</span></span><span style="display:flex;"><span>  Stream&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; mapEventToState(CounterEvent event) async* <span style="color:#f00">{</span>
+</span></span><span style="display:flex;"><span>    switch (event) <span style="color:#f00">{</span>
+</span></span><span style="display:flex;"><span>      /// <span style="color:#fff;font-weight:bold">When</span> a `CounterEvent.increment` event <span style="color:#fff;font-weight:bold">is</span> added,
+</span></span><span style="display:flex;"><span>      /// the current `state` of the bloc <span style="color:#fff;font-weight:bold">is</span> accessed via the `state` property
+</span></span><span style="display:flex;"><span>      /// <span style="color:#fff;font-weight:bold">and</span> a new state <span style="color:#fff;font-weight:bold">is</span> emitted via `yield`.
+</span></span><span style="display:flex;"><span>      <span style="color:#fff;font-weight:bold">case</span> CounterEvent.increment:
+</span></span><span style="display:flex;"><span>        yield state + <span style="color:#ff0;font-weight:bold">1</span>;
+</span></span><span style="display:flex;"><span>        break;
+</span></span><span style="display:flex;"><span>      <span style="color:#f00">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f00">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f00">}</span>
+</span></span></code></pre></div></li>
+<li>Using a bloc
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span>void main() async <span style="color:#f00">{</span>
+</span></span><span style="display:flex;"><span>  /// <span style="color:#fff;font-weight:bold">Create</span> a `CounterBloc` instance.
+</span></span><span style="display:flex;"><span>  final bloc = CounterBloc();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  /// Access the state of the `bloc` via `state`.
+</span></span><span style="display:flex;"><span>  print(bloc.state); // <span style="color:#ff0;font-weight:bold">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  /// Interact <span style="color:#fff;font-weight:bold">with</span> the `bloc` <span style="color:#fff;font-weight:bold">to</span> <span style="color:#fff;font-weight:bold">trigger</span> `state` changes.
+</span></span><span style="display:flex;"><span>  bloc.<span style="color:#fff;font-weight:bold">add</span>(CounterEvent.increment);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  /// Wait <span style="color:#fff;font-weight:bold">for</span> next iteration of the event-<span style="color:#fff;font-weight:bold">loop</span>
+</span></span><span style="display:flex;"><span>  /// <span style="color:#fff;font-weight:bold">to</span> ensure event has been processed.
+</span></span><span style="display:flex;"><span>  await Future.<span style="color:#fff;font-weight:bold">delayed</span>(Duration.zero);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  /// Access the new `state`.
+</span></span><span style="display:flex;"><span>  print(bloc.state); // <span style="color:#ff0;font-weight:bold">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  /// Close the `bloc` <span style="color:#fff;font-weight:bold">when</span> it <span style="color:#fff;font-weight:bold">is</span> no longer needed.
+</span></span><span style="display:flex;"><span>  bloc.close();
+</span></span><span style="display:flex;"><span><span style="color:#f00">}</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="getx">
+  GetX
+  <a class="heading-link" href="#getx">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p><a href="https://pub.dev/packages/get">Get</a> also provides state management in its package in a simple convenient way. It aims to
+make development for Flutter easier and more convenient.</p>
+<h4 id="concept-1">
+  Concept
+  <a class="heading-link" href="#concept-1">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<ul>
+<li>You start with a variable you want to make observable
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>var name = &#39;My Name&#39;;
+</span></span></code></pre></div></li>
+<li>To do that you just need to add <code>.obs</code> to it
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>var name = &#39;My Name&#39;.obs;
+</span></span></code></pre></div></li>
+<li>In your UI widget you simply refer to it this way to update it every time the value changes
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Obx(() =&gt; Text(&#34;${controller.name}&#34;));
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="example-1">
+  Example
+  <a class="heading-link" href="#example-1">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<ol>
+<li>Add <code>get</code> on App level to your MaterialApp. It is a quick way to use a modified widget with the MaterialApp as
+default child.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>void main() =&gt; runApp(GetMaterialApp(home: Home()));
+</span></span></code></pre></div><ol start="2">
+<li>Create a class for your business logic, methods and variables. To make a variable <em>observable</em> simply add <code>.obs</code> to
+it value.
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>class Controller extends GetxController{
+</span></span><span style="display:flex;"><span> var count = 0.obs;
+</span></span><span style="display:flex;"><span> increment() =&gt; count++;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>Create your widget and just use <code>StatelessWidget</code> instead of <code>StatefulWidget</code> (saves some RAM)
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>class Home extends StatelessWidget {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    @override
+</span></span><span style="display:flex;"><span>    Widget build(context) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        // Instantiate your class using Get.put() to make it available for all &#34;child&#34; routes there.
+</span></span><span style="display:flex;"><span>        final Controller c = Get.put(Controller());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        return Scaffold(
+</span></span><span style="display:flex;"><span>          // Use Obx(()=&gt; to update Text() whenever count is changed.
+</span></span><span style="display:flex;"><span>          appBar: AppBar(title: Obx(() =&gt; Text(&#34;Clicks: ${c.count}&#34;))),
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          // Replace the 8 lines Navigator.push by a simple Get.to(). You don&#39;t need context
+</span></span><span style="display:flex;"><span>          body: Center(child: RaisedButton(
+</span></span><span style="display:flex;"><span>                  child: Text(&#34;Go to Other&#34;), onPressed: () =&gt; Get.to(Other()))),
+</span></span><span style="display:flex;"><span>          floatingActionButton:
+</span></span><span style="display:flex;"><span>              FloatingActionButton(child: Icon(Icons.add), onPressed: c.increment));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>class Other extends StatelessWidget {
+</span></span><span style="display:flex;"><span>    // You can ask Get to find a Controller that is being used by another page and redirect you to it.
+</span></span><span style="display:flex;"><span>    final Controller c = Get.find();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    @override
+</span></span><span style="display:flex;"><span>    Widget build(context){
+</span></span><span style="display:flex;"><span>        // Access the updated count variable
+</span></span><span style="display:flex;"><span>        return Scaffold(body: Center(child: Text(&#34;${c.count}&#34;)));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ol>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "slowtech" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    ©
+    
+      2020 -
+    
+    2022
+     Erik Slowikowski 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+      
+      <script src="https://abouterik.github.io/js/coder.min.8fb86376a16e684af472a329aef502dbebcfab65ce264e9750d144912947c602.js" integrity="sha256-j7hjdqFuaEr0cqMprvUC2&#43;vPq2XOJk6XUNFEkSlHxgI="></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>

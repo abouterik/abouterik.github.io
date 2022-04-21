@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on //erik</title>
+    <link>https://abouterik.github.io/projects/</link>
+    <description>Recent content in Projects on //erik</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Mar 2020 22:51:48 +0100</lastBuildDate><atom:link href="https://abouterik.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lunchnow</title>
+      <link>https://abouterik.github.io/projects/lunchnow/</link>
+      <pubDate>Mon, 09 Mar 2020 22:51:48 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/projects/lunchnow/</guid>
+      <description>FIND YOUR NEXT LUNCH &amp;amp; MEET WITH FRIENDS    From October 2018 on I started developing an app called ‘LunchNow‘. It’s mainly a service for users to find lunch offers near their places or offices. First this was mainly a complete rework of a previous version made in Java &amp;amp; Objective C (Android and iOS respectively) into a new codebase with Typescript and React Native.
+Later on I integrated personalization features like your personal daily suggestions and a whole new feature set to organize personal meetups with your friends or colleagues.</description>
+    </item>
+    
+    <item>
+      <title>Blood Runs Cold</title>
+      <link>https://abouterik.github.io/projects/blood-runs-cold/</link>
+      <pubDate>Mon, 09 Mar 2020 22:46:02 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/projects/blood-runs-cold/</guid>
+      <description>“Blood Runs Cold is a gruesome take on the much-loved Hidden Object genre. The story follows journalist Paige Harper as she attempts to prove her innocence, having been framed for a series of horrifying crimes. Subjected to a trial by media in a world where news is more about shocking headlines than truth, players must assist Paige as she delves into the dark and twisted mind of a serial killer.</description>
+    </item>
+    
+    <item>
+      <title>Prostate Tumor Localization</title>
+      <link>https://abouterik.github.io/projects/prostate-tumor-localization/</link>
+      <pubDate>Mon, 09 Mar 2020 22:29:00 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/projects/prostate-tumor-localization/</guid>
+      <description>PROSTATE TUMOR LOCALIZATION USING MULTIPARAMETRIC MAGNETIC RESONANCE IMAGING    This was my Master thesis that I’ve written during 2011 in collaboration with the MR Cancer Group of Norwegian University of Science and Technology in Trondheim, Norway. It was a great pleasure to work with such talented people!
+Synopsis:    Prostate cancer is the leading cancer disease diagnosed in males. More than 70 percentage of the diagnosed cancers are located in the peripheral zone of the prostate.</description>
+    </item>
+    
+    <item>
+      <title>Supportive neurological rehabilitation using the wiimote technology</title>
+      <link>https://abouterik.github.io/projects/wiimote-rehabilitation/</link>
+      <pubDate>Mon, 09 Mar 2020 22:14:24 +0100</pubDate>
+      
+      <guid>https://abouterik.github.io/projects/wiimote-rehabilitation/</guid>
+      <description>This was my Bachelor thesis back in 2010. Even then I was aiming at connecting gaming and healthcare for humans in need.
+Memory was also subject of training. Here the numbers on the balloons vanished and the number increased at each step
+Synopsis:    The bachelor thesis aims to develop an application for the target group of neurologically impaired motor skills. The disease symptoms are triggered for example by cerebellum diseases, ataxia or Parkinson’s syndrome.</description>
+    </item>
+    
+  </channel>
+</rss>
